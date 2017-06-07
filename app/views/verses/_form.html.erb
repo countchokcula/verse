@@ -1,0 +1,27 @@
+<%= form_with(model: verse, local: true) do |form| %>
+  <% if verse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(verse.errors.count, "error") %> prohibited this verse from being saved:</h2>
+
+      <ul>
+      <% verse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :verse_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :words %>
+    <%= form.text_area :words, id: :verse_words %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

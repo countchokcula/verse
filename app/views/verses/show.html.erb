@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @verse.name %>
+</p>
+
+<p>
+  <strong>Words:</strong>
+  <%= @verse.words %>
+</p>
+
+<%= link_to 'Edit', edit_verse_path(@verse) %> |
+<%= link_to 'Back', verses_path %>

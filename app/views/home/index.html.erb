@@ -1,0 +1,45 @@
+<div class="" style="height: inherit;">
+			<div id="top" class="bars"></div>
+			<!-- fade in right or left and make the first word of every li red -->
+
+
+			<div id="poem_wrap">
+				<ul id="poem" >
+					<% @stanzas.each do |s| %>
+						<li>
+							<% s.lines.each do |line| %>
+								<p>
+									<% line.words.each do |word| %>
+
+										<% if word.word == s.lines.first.words.first.word %>
+
+											<span><%=word.word%></span>
+										<% else %>
+											<%= word.word %>
+										<% end %>
+									<% end %>
+								</p>
+							<% end %>
+						</li>
+					<% end %>
+					<li>
+						<h3>
+							megaannn
+							<span>
+								<i class="em em-purple_heart"></i>
+							</span>
+						</h3>
+						<strong> I hope you enjoyed it!!!</strong>
+					</li>
+				</ul>
+
+				<div style="width: 100%; height: 5px; background-color: #a9a9a9;">
+				   <div id="progress" style="height: inherit;  background-color: #00ff00;  width: 0;"></div>
+				</div>
+				<div>
+					<div class="rightbtn common">To the right! -> </div>
+					<div class="leftbtn common"> <- To the left!</div>
+				</div>
+			</div>
+			<div class="bars" id="bottom"></div>
+		</div>
