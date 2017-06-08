@@ -65,6 +65,9 @@ $(document).ready(function(){
 						index += 1;
 						progress(index);
 						fade(index);
+						setTimeout(function(){
+							color_change(index);
+						}, 1000);
 					}else{
 						//scroll animation
 
@@ -78,11 +81,16 @@ $(document).ready(function(){
 						index -= 1;
 						progress(index);
 						fade(index);
+						setTimeout(function(){
+							color_change(index);
+						}, 1500);
 					}else{
 						//scroll animation
 					}
 				});
-
+				var color_change = (function(i){
+					$(stanzas[i]).find("span").css("color", "#ff3b3f");
+				});
 				//deletes unused LI elements
 				for(i = 0; i < max; i++){
 					if(i != index) {
@@ -97,7 +105,7 @@ $(document).ready(function(){
 					$("#poem_wrap").css("background-color", "black");
 				}, 3000);
 				setTimeout(function(){
-					$("span").css("color", "#ff3b3f");
+					color_change(0);
 				}, 3500);
 
 				$(".rightbtn").click(function(){
